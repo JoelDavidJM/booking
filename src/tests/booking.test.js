@@ -20,7 +20,7 @@ test('GET/ bookings debe retornar todo los bookings ', async () => {
 
 test('POST/ bookings debe retornar el elemento creado', async () => {
     const body = {
-        checkIn: "2020-02-11",
+        checkIn: "2020-01-11",
         checkOut: "2020-03-11"
     }
     const res = await request(app).post('/bookings').send(body).set('Authorization', `Bearer ${token}`)
@@ -32,7 +32,7 @@ test('POST/ bookings debe retornar el elemento creado', async () => {
 
 test('PUT/ bookings/:id debe retornar el elemento modificado por su id', async () => {
     const body = {
-        checkIn: "2020-06-01 "
+        checkIn: "2020-06-01"
     }
     const res = await request(app).put(`/bookings/${id}`).send(body).set('Authorization', `Bearer ${token}`)
     expect(res.status).toBe(200);
