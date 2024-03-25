@@ -1,8 +1,12 @@
 const catchError = require('../utils/catchError');
 const City = require('../models/City');
+const Hotel = require('../models/Hotel')
 
 const getAll = catchError(async(req, res) => {
-    const results = await City.findAll();
+    const results = await City.findAll({include: [{
+        model: Hotel,
+        include: [Image, City]
+    }]});
     return res.json(results);
 });
 
