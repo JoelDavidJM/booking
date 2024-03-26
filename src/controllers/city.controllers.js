@@ -4,7 +4,10 @@ const Hotel = require('../models/Hotel');
 const Image = require('../models/Image');
 
 const getAll = catchError(async(req, res) => {
-    const results = await City.findAll({include: [Hotel, Image]});
+    const results = await City.findAll({include: [{
+        model: Hotel,
+        include: [Image, City]
+    }]});
     return res.json(results);
 });
 
@@ -15,7 +18,10 @@ const create = catchError(async(req, res) => {
 
 const getOne = catchError(async(req, res) => {
     const { id } = req.params;
-    const result = await City.findByPk(id);
+    const result = await City.findByPk(id, {include: [{
+        model: Hotel,
+        include: [Image, City]
+    }]});
     if(!result) return res.sendStatus(404);
     return res.json(result);
 });
