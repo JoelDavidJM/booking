@@ -13,7 +13,7 @@ const City = sequelize.define('city', {
     countryId : {
         type: DataTypes.STRING,
         allowNull: false
-    },
+    }
 });
 
 module.exports = City;

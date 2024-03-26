@@ -9,7 +9,7 @@ const Review = sequelize.define('review', {
     comment: {
         type: DataTypes.TEXT,
         allowNull: false
-    },
+    }
 });
 
 module.exports = Review;

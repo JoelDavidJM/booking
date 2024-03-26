@@ -5,7 +5,7 @@ const Image = sequelize.define('image', {
     url: {
         type: DataTypes.STRING,
         allowNull: false
-    },
+    }
 }, {
     timestamps: false
 });

@@ -25,7 +25,7 @@ const Hotel = sequelize.define('hotel', {
     lon: {
         type: DataTypes.DECIMAL,
         allowNull: false
-    },
+    }
 });
 
 module.exports = Hotel;

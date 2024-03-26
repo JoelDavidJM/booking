@@ -9,7 +9,7 @@ const Booking = sequelize.define('booking', {
     checkOut: {
         type: DataTypes.DATEONLY,
         allowNull: false
-    },
+    }
 });
 
 module.exports = Booking;

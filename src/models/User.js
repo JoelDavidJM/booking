@@ -22,7 +22,7 @@ const User = sequelize.define('user', {
     gender: {
         type: DataTypes.ENUM(['MALE', 'FEMALE', 'OTHER']),
         allowNull: false
-    },
+    }
 });
 
 User.prototype.toJSON = function () {
